@@ -1,0 +1,43 @@
+.prodcard{
+    height:25vw;
+    width:25vw;
+    padding:10px 10px 10px 10px;
+    position: relative;
+}
+
+#productImage{
+    height:12vw;
+    width:15vw;
+    align-self: center ;
+}
+#price{
+    padding: 0%;
+    margin: 0;
+}
+
+#downBtn{
+    position: absolute;
+    bottom: 0;
+    width:20vw;
+    margin-bottom: 20px;
+}
+  
+  /* 📱 Mobile responsiveness */
+  @media (max-width: 768px) {
+    .prodcard {
+      width: 90vw;
+      height: 95vw;
+    }
+  
+    #productImage {
+      width: 70%;
+      height: 40vw;
+    }
+  
+    #downBtn {
+      width: 90%;
+      margin: 10px auto;
+      font-size: 4vw;
+    }
+  }
+  
