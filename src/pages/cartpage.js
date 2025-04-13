@@ -60,7 +60,11 @@ const Cartpage = () => {
                         <div className='row'>
                 <div key={p._id} className="card m-2 col-md-4" style={{ width: "15.23vw", height:"auto   " }}>
                 <img
-                  src={`/api/v1/product/product-photo/${p._id}`}
+                 src={`${
+                  process.env.NODE_ENV === 'production'
+                    ? 'https://medhouse-backend.onrender.com'
+                    : 'http://localhost:8080'
+                }/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
                   alt={p.name}
                   onClick={()=>navigate(`/product/${p.slug}`)}
