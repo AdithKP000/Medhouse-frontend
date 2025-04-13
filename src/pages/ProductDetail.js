@@ -167,7 +167,11 @@ const ProductDetail = () => {
               >
                 {product._id && (
                   <img
-                    src={`/api/v1/product/product-photo/${product._id}`}
+                  src={`${
+                    process.env.NODE_ENV === 'production'
+                      ? 'https://medhouse-backend.onrender.com'
+                      : 'http://localhost:8080'
+                  }/api/v1/product/product-photo/${product._id}`}
                     alt={`${product.name || "Product"} thumbnail ${index + 1}`}
                     className="thumbnail-image"
                   />
@@ -363,7 +367,11 @@ const ProductDetail = () => {
                     <div key={item._id} className="cart-item">
                       <div className="cart-item-image-container">
                         <img
-                          src={`/api/v1/product/product-photo/${item._id}`}
+                          src={`${
+                            process.env.NODE_ENV === 'production'
+                              ? 'https://medhouse-backend.onrender.com'
+                              : 'http://localhost:8080'
+                          }/api/v1/product/product-photo/${item._id}`}
                           alt={item.name}
                           className="cart-item-image"
                         />
@@ -436,7 +444,11 @@ const ProductDetail = () => {
                 >
                   <div className="recommended-product-image-container">
                     <img 
-                      src={`/api/v1/product/product-photo/${p._id}`} 
+                     src={`${
+                      process.env.NODE_ENV === 'production'
+                        ? 'https://medhouse-backend.onrender.com'
+                        : 'http://localhost:8080'
+                    }/api/v1/product/product-photo/${p._id}`} 
                       alt={p.name} 
                       className="recommended-product-image" 
                     />
