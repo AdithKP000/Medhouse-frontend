@@ -2,7 +2,8 @@ import React,{useEffect,useState} from 'react';
 import toast from 'react-hot-toast';
 import Layout from '../../components/layout/layout.js';
 import AdminMenu from '../../components/layout/AdminMenu.js';
-import axios from 'axios';
+
+import axios from "../../axiosInstance.js"
 import CategoryForm from '../../components/Form/CategoryForm.js';
 import { Modal } from 'antd';
 

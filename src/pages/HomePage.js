@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Layout from '../components/layout/layout.js';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/cart.js';
-import axios from 'axios';
+import axios from "../axiosInstance.js"
 import toast from 'react-hot-toast';
 import SearchInput from '../components/Form/SearchInput.js';
 import { AiOutlineShoppingCart, AiOutlineReload } from "react-icons/ai";

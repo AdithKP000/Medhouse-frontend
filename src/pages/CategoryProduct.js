@@ -1,13 +1,14 @@
 import React from 'react'
 import Layout from '../components/layout/layout'
 import { useState,useEffect } from 'react'
-import axios from 'axios';
+import axios from "../axiosInstance.js"
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { AiOutlineShoppingCart,  } from "react-icons/ai";
 import { useCart } from '../context/cart';
 import toast from 'react-hot-toast';
-import "../styles/categoryProduct.css"
+import '../styles/Homepage.css';
+
 
 
 const CategoryProduct = () => {
@@ -38,43 +39,40 @@ const getProductBycat= async()=>{
     }}> 
         <h6 className='text-center'> Category - {categories.name}</h6>
         <h4>{products.length} item Found</h4>
-        <div className="d-flex flex-wrap ">
-
-{products?.map((p) => (
- <div key={p._id} className=" prodcard card  col-md-4 col-xs-12 "  >
- <img  id='productImage'
-   src={`/api/v1/product/product-photo/${p._id}`}
-   
-   alt={p.name}
-   onClick={()=>navigate(`/product/${p.slug}`)}
-  />
- <div className="card-body ">
-   <h5 className="card-title ">{p.name}</h5>
-   <p className="card-text">{p.cname}</p>
-
-   <p id="price">
-       ₹{p.salerate}/-   <s>{p.price}</s> 
-   </p>
-   <div className="d-grid gap-2 col-12 mx-auto">
-     {/* <button className="btn btn-primary btn-sm" onClick={()=>navigate(`/product/${p.slug}`)} type="button">
-       See details
-     </button> */}
-     <button id="downBtn" className="btn  btn-hover btn-outline-success btn-sm "
-     onClick={()=>{
-       setCart([...cart,p]);
-       localStorage.setItem("cart",JSON.stringify([...cart,p]));
-       toast.success("item added to cart")
-     }}
-      >  <AiOutlineShoppingCart/> Add to Cart
-     
-     </button>
-   </div>
-   
- </div>
-</div>
-))}
-
-</div>
+        <div className="products-grid1">
+          {products?.length === 0 ? (
+            <div className="no-products">
+              <h3>No products found</h3>
+              <p>Try a different category or reset filters</p>
+            </div>
+          ) : (
+            products?.map((p) => (
+              <div key={p._id} className="product-card1">
+                <div className="product-image" onClick={() => navigate(`/product/${p.slug}`)}>
+                  <img src={`/api/v1/product/product-photo/${p._id}`} alt={p.name} />
+                </div>
+                <div className="product-info">
+                  <h3 className="product-name">{p.name}</h3>
+                  <p className="product-category">{p.cname}</p>
+                  <div className="product-price">
+                    <span className="sale-price">₹{p.salerate}/-</span>
+                    <span className="original-price1">₹{p.price}</span>
+                  </div>
+                  <button
+                    className="add-to-cart-btn"
+                    onClick={() => {
+                      setCart([...cart, p]);
+                      localStorage.setItem("cart", JSON.stringify([...cart, p]));
+                      toast.success("Item added to cart");
+                    }}
+                  >
+                    <AiOutlineShoppingCart /> Add to Cart
+                  </button>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
     </div>
    </Layout>
   )

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import AdminMenu from "../../components/layout/AdminMenu.js"
 import Layout from "../../components/layout/layout.js"
-import axios from "axios"
+import axios from "../../axiosInstance.js"
 import toast from "react-hot-toast"
 import { Link } from "react-router-dom"
 import { FaSearch, FaSpinner } from "react-icons/fa" // Make sure to install react-icons

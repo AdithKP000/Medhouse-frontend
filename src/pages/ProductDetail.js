@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import axios from "axios"
+import axios from "../axiosInstance.js"
 import { ShoppingCart, Heart, Star, Truck, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useCart } from "../context/cart.js"
 import { useAuth } from '../context/Auth.js';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSearch } from '../../context/Search';
-import axios from 'axios';
+import axios from "../../axiosInstance.js"
 import { useNavigate } from 'react-router-dom';
 import {AiOutlineSearch} from 'react-icons/ai'
 

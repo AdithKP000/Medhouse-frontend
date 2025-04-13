@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../../components/layout/layout.js';
 import AdminMenu from '../../components/layout/AdminMenu';
-import axios from 'axios';
+import axios from "../../axiosInstance.js"
 import './user.css'; 
 
 

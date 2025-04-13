@@ -24,31 +24,33 @@ const Search = () => {
 
         <div className="products-grid">
           {values?.results.map((p) => (
-            <div key={p._id} className="product-card">
-              <div className="product-image-container" onClick={() => navigate(`/product/${p.slug}`)}>
-                <img className="product-image" src={`/api/v1/product/product-photo/${p._id}`} alt={p.name} />
+              <div key={p._id} className="product-card1">
+              <div className="product-image" onClick={() => navigate(`/product/${p.slug}`)}>
+                <img src={`/api/v1/product/product-photo/${p._id}`} alt={p.name} />
               </div>
-              <div className="product-details">
-                <h5 className="product-name">{p.name}</h5>
+              <div className="product-info">
+                <h3 className="product-name">{p.name}</h3>
                 <p className="product-category">{p.cname}</p>
-                <p className="product-price">
-                  ₹{p.salerate}/- <span className="original-price">₹{p.price}</span>
-                </p>
+                <div className="product-price">
+                  <span className="sale-price">₹{p.salerate}/-</span>
+                  <span className="original-price1">₹{p.price}</span>
+                </div>
                 <button
                   className="add-to-cart-btn"
                   onClick={() => {
-                    setCart([...cart, p])
-                    localStorage.setItem("cart", JSON.stringify([...cart, p]))
-                    toast.success("Item added to cart")
+                    setCart([...cart, p]);
+                    localStorage.setItem("cart", JSON.stringify([...cart, p]));
+                    toast.success("Item added to cart");
                   }}
                 >
-                  <AiOutlineShoppingCart className="cart-icon" /> Add to Cart
+                  <AiOutlineShoppingCart /> Add to Cart
                 </button>
               </div>
             </div>
           ))}
         </div>
       </div>
+      
     </Layout>
   )
 }

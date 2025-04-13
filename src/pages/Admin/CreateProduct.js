@@ -1,7 +1,7 @@
 import React ,{useEffect,useState}from 'react'
 import Layout from '../../components/layout/layout.js'
 import AdminMenu from '../../components/layout/AdminMenu.js'
-import axios from 'axios';
+import axios from "../../axiosInstance.js"
 import toast from 'react-hot-toast';
 import{Select} from 'antd'
 import { useNavigate } from 'react-router-dom';
