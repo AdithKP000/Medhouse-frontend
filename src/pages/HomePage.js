@@ -174,7 +174,7 @@ const HomePage = () => {
             products?.map((p) => (
               <div key={p._id} className="product-card1">
                 <div className="product-image" onClick={() => navigate(`/product/${p.slug}`)}>
-                  <img src={`/api/v1/product/product-photo/${p._id}`} alt={p.name} />
+                  <img src={`https://medhouse-backend.onrender.com/api/v1/product/product-photo/${p._id}`} alt={p.name} />
                 </div>
                 <div className="product-info">
                   <h3 className="product-name">{p.name}</h3>
