@@ -74,7 +74,11 @@ const Products = () => {
                     <Link to={`/dashboard/admin/product/${p.slug}`} className="text-decoration-none">
                       <div className="card h-100 shadow-sm hover-shadow">
                         <img
-                          src={`/api/v1/product/product-photo/${p._id}`}
+                         src={`${
+                          process.env.NODE_ENV === 'production'
+                            ? 'https://medhouse-backend.onrender.com'
+                            : 'http://localhost:8080'
+                        }/api/v1/product/product-photo/${p._id}`}
                           className="card-img-top"
                           alt={p.name}
                           style={{ height: "200px", objectFit: "cover" }}

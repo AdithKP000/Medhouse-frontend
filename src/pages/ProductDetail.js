@@ -128,7 +128,7 @@ const ProductDetail = () => {
       </div>
 
     )}
-      {/* Breadcrumb */}
+      {/* Breadcrumb */}c
       
 
       <div className="product-grid">
@@ -137,7 +137,11 @@ const ProductDetail = () => {
           <div className="main-image-container">
             {product._id && (
               <img
-                src={`/api/v1/product/product-photo/${product._id}`}
+              src={`${
+                process.env.NODE_ENV === 'production'
+                  ? 'https://medhouse-backend.onrender.com'
+                  : 'http://localhost:8080'
+              }/api/v1/product/product-photo/${product._id}`}
                 alt={product.name || "Product image"}
                 className="main-image"
               />

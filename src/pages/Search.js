@@ -26,7 +26,11 @@ const Search = () => {
           {values?.results.map((p) => (
               <div key={p._id} className="product-card1">
               <div className="product-image" onClick={() => navigate(`/product/${p.slug}`)}>
-                <img src={`/api/v1/product/product-photo/${p._id}`} alt={p.name} />
+                <img src={`${
+                    process.env.NODE_ENV === 'production'
+                      ? 'https://medhouse-backend.onrender.com'
+                      : 'http://localhost:8080'
+                  }/api/v1/product/product-photo/${p._id}`} alt={p.name} />
               </div>
               <div className="product-info">
                 <h3 className="product-name">{p.name}</h3>
