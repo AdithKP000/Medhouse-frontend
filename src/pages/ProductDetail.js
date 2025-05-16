@@ -411,7 +411,7 @@ const ProductDetail = () => {
             ) : (
               <div className="empty-cart">
                 <p className="empty-cart-message">Your cart is empty</p>
-                <button className="continue-shopping-button" onClick={() => navigate("/products")}>
+                <button className="continue-shopping-button" onClick={() => navigate("/categories")}>
                   Continue Shopping
                 </button>
               </div>
