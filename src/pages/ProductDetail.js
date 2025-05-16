@@ -128,7 +128,7 @@ const ProductDetail = () => {
       </div>
 
     )}
-      {/* Breadcrumb */}c
+      {/* Breadcrumb */}
       
 
       <div className="product-grid">
